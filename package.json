@@ -16,5 +16,10 @@
   "bugs": {
     "url": "https://github.com/jperlmanmoore/liri-node-app/issues"
   },
-  "homepage": "https://github.com/jperlmanmoore/liri-node-app#readme"
+  "homepage": "https://github.com/jperlmanmoore/liri-node-app#readme",
+  "dependencies": {
+    "axios": "^0.18.0",
+    "inquirer": "^6.2.1",
+    "node-spotify-api": "^1.1.1"
+  }
 }
