@@ -7,6 +7,8 @@ const axios = require("axios");
 //file system
 const fs = require("fs");
 
+//use to write text to file
+const text = process.argv[2];
 //keys.js -- 
 const keys = require("./keys.js");
 
@@ -25,7 +27,6 @@ const moment = require('moment');
 
 const switchCases = (choice) => {
   switch (choice) {
-
     case "movie-this":
       inquirer.prompt([
         {
@@ -37,9 +38,7 @@ const switchCases = (choice) => {
           movie(answer.name);
         }
       });
-
       break;
-
     case "spotify-this-song":
       inquirer.prompt([
         {
@@ -51,7 +50,7 @@ const switchCases = (choice) => {
           spotifySearch(answer.name, fs);
         }
       });
-
+      break;
     case "concert-this":
       inquirer.prompt([
         {
@@ -63,13 +62,12 @@ const switchCases = (choice) => {
           concertSearch(answer.name, fs);
         }
       });
-
+      break;
     case "do-what-it-says":
       doWhat();
-  
-    break;
+      break;
   };
-    // default: console.log("default" + choice)
+  // default: console.log("default" + choice)
 };
 
 
@@ -85,11 +83,10 @@ var askQuestion = () => {
     // console.log(answer.choices);
     switchCases(answer.choices);
   });
-
 };
 
 //spotify
-function spotifySearch(answer, fs) {
+function spotifySearch(answer) {
   if (answer === "") {
     answer = "I Want it That Way";
   }
@@ -134,23 +131,42 @@ const movie = (answer) => {
 };
 
 const doWhat = (text) => {
-  fs.readFile("random.txt", "utf8", function(err, text) {
-      if (err) {console.log("oops")} 
-      text = text.split(",");
-      // console.log(text);
-      spotifySearch(text[1]);
+  fs.readFile("random.txt", "utf8", function (err, text) {
+    if (err) { console.log("oops") }
+    text = text.split(",");
+    // console.log(text);
+    spotifySearch(text[1]);
   });
   return text;
 };
 
-const concertSearch = (answer, fs) => {
+const concertSearch = (answer) => {
   if (answer === "") {
     console.log("Please, enter a name to search a band or artist")
   } else {
-    const queryURL = "https://rest.bandsintown.com/artists/" + answer + "/events?app_id=codingbootcamp"
-  
-  }
-}
+    // const queryURL = `https://rest.bandsintown.com/artists/${answer}/events?app_id=codingbootcamp`
+    // console.log(queryURL);
+
+    axios.get(`https://rest.bandsintown.com/artists/${answer}/events?app_id=codingbootcamp`)
+      .then(function (response) {
+        for (var i = 0; i < 5; i++) {
+          var concerts = "\n------------------------------------------------------------------------------"
+          "\nVenue name: " + response.data[i].venue.name +
+            "\nVenue location: " + response.data[i].venue.city +
+            "\nEvent date: " + (moment(response.data[i].datetime).format("MM/DD/YYY")) +
+            "\n------------------------------------------------------------------------------"
+        }
+        fs.appendFile("sample.txt", concerts, function (err) {
+          if (err) {
+            console.log(err);
+          } else {
+            console.log(concerts)
+          }
+
+        })
+      })
+  };
+};
 
 askQuestion();
 switchCases();
