@@ -52,9 +52,25 @@ function switchCases(choice) {
         }
       });
 
+    case "concert-this":
+      inquirer.prompt([
+        {
+          type: "answer",
+          name: "name",
+        }
+      ]).then(answer => {
+        if (answer.name) {
+          concertSearch(answer.name, fs);
+        }
+      });
+
+    case "do-what-it-says":
+    doWhat(fs);
+
       break;
 
-    default: console.log("default" + choice)
+    // default: console.log("default" + choice)
+
   };
 };
 
@@ -84,12 +100,12 @@ function spotifySearch(answer) {
       return console.log("error occured: " + err);
     }
     console.log(
-      `\n
+      `\n ---------------------------------------
   Song: ${data.tracks.items[0].name}, 
   Artist: ${data.tracks.items[0].artists[0].name},
   Album name: ${data.tracks.items[0].album.name}, 
   Preview: ${data.tracks.items[0].external_urls.spotify}
-  \n`);
+  \n---------------------------------------`);
   })
   // console.log()
 };
@@ -102,9 +118,9 @@ var movie = (answer) => {
   // var queryURL = "http://www.omdbapi.com/?t=" + answer + "&y=&plot=short&apikey=trilogy";
   // console.log(queryURL);
   axios.get("http://www.omdbapi.com/?t=" + answer + "&y=&plot=short&apikey=trilogy")
-    .then( function(response) {
+    .then(function (response) {
       console.log(
-        `\n
+        `\n------------------------------------------------------------------------------
         Movie title: ${response.data.Title}
         Movie Year: ${response.data.Year}
         IMDB rating: ${response.data.imdbRating}
@@ -113,19 +129,27 @@ var movie = (answer) => {
         Language: ${response.data.Language}
         Plot: ${response.data.Plot}
         Actors ${response.data.Actors}
-        \n`)
+        \n------------------------------------------------------------------------------`)
     })
-      
-      // response => {
-      // console.log();
-      // console.log(response);
-    // })
-    .catch(function(error) {
+    .catch(function (error) {
       console.log(error);
-    
-  // fs.appendFile("log.txt", console.log(`Movie title: ${response.title}, Movie Year: ${response.year}, IMDB rating: ${response.imdbRating}, Rotten Tomato rating: ${response.ratings.source[1]}, Country: ${response.country}, Language: ${response.language}, Plot: ${response.plot}, Actors ${response.actors}`))
-});
+      // fs.appendFile("log.txt", console.log(`Movie title: ${response.title}, Movie Year: ${response.year}, IMDB rating: ${response.imdbRating}, Rotten Tomato rating: ${response.ratings.source[1]}, Country: ${response.country}, Language: ${response.language}, Plot: ${response.plot}, Actors ${response.actors}`))
+    });
 };
+
+var doWhat = (fs) => {
+  fs.readFile("random.txt", "utf8", function(err, data){
+    if (err) {
+      console.log("Ooop, can't do what it says!");
+    } else {
+      spotifySearch(data[1]);
+    }
+  });
+};
+
+var concertSearch = (answer) => {
+  
+}
 
 askQuestion();
 switchCases();
