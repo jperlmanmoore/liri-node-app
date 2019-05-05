@@ -23,7 +23,7 @@ const moment = require('moment');
 //bands
 // var bandsintown = require('bandsintown')(APP_ID);
 
-function switchCases(choice) {
+const switchCases = (choice) => {
   switch (choice) {
 
     case "movie-this":
@@ -65,8 +65,7 @@ function switchCases(choice) {
       });
 
     case "do-what-it-says":
-    doWhat(fs);
-
+      doWhat();
       break;
 
     // default: console.log("default" + choice)
@@ -75,7 +74,7 @@ function switchCases(choice) {
 };
 
 
-var askQuestion = function () {
+var askQuestion = () => {
   inquirer.prompt([
     {
       type: "list",
@@ -91,7 +90,7 @@ var askQuestion = function () {
 };
 
 //spotify
-function spotifySearch(answer) {
+function spotifySearch(answer, fs) {
   if (answer === "") {
     answer = "I Want it That Way";
   }
@@ -111,16 +110,14 @@ function spotifySearch(answer) {
 };
 
 //movie
-var movie = (answer) => {
+const movie = (answer) => {
   if (answer === "") {
     answer = `Mr. Nobody! If you haven't watched "Mr. Nobody," then you should: http://www.imdb.com/title/tto485947. It's on Netflix!`
-  }
-  // var queryURL = "http://www.omdbapi.com/?t=" + answer + "&y=&plot=short&apikey=trilogy";
-  // console.log(queryURL);
-  axios.get("http://www.omdbapi.com/?t=" + answer + "&y=&plot=short&apikey=trilogy")
-    .then(function (response) {
-      console.log(
-        `\n------------------------------------------------------------------------------
+  } else {
+    axios.get("http://www.omdbapi.com/?t=" + answer + "&y=&plot=short&apikey=trilogy")
+      .then(function (response) {
+        console.log(
+          `\n------------------------------------------------------------------------------
         Movie title: ${response.data.Title}
         Movie Year: ${response.data.Year}
         IMDB rating: ${response.data.imdbRating}
@@ -130,15 +127,15 @@ var movie = (answer) => {
         Plot: ${response.data.Plot}
         Actors ${response.data.Actors}
         \n------------------------------------------------------------------------------`)
-    })
-    .catch(function (error) {
-      console.log(error);
-      // fs.appendFile("log.txt", console.log(`Movie title: ${response.title}, Movie Year: ${response.year}, IMDB rating: ${response.imdbRating}, Rotten Tomato rating: ${response.ratings.source[1]}, Country: ${response.country}, Language: ${response.language}, Plot: ${response.plot}, Actors ${response.actors}`))
-    });
+      })
+      .catch(function (error) {
+        console.log(error);
+      });
+  };
 };
 
-var doWhat = (fs) => {
-  fs.readFile("random.txt", "utf8", function(err, data){
+const doWhat = (fs) => {
+  fs.readFile("random.txt", "utf8", function (err, data) {
     if (err) {
       console.log("Ooop, can't do what it says!");
     } else {
@@ -147,8 +144,12 @@ var doWhat = (fs) => {
   });
 };
 
-var concertSearch = (answer) => {
-  
+const concertSearch = (answer, fs) => {
+  if (answer === "") {
+    console.log("Please, enter a name to search a band or artist")
+  } else {
+
+  }
 }
 
 askQuestion();
