@@ -19,7 +19,11 @@
   "homepage": "https://github.com/jperlmanmoore/liri-node-app#readme",
   "dependencies": {
     "axios": "^0.18.0",
+    "bandsintown": "^1.0.1",
+    "dotenv": "^8.0.0",
     "inquirer": "^6.2.1",
-    "node-spotify-api": "^1.1.1"
+    "moment": "^2.24.0",
+    "node-spotify-api": "^1.1.1",
+    "omdb": "^0.8.0"
   }
 }

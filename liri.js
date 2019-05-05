@@ -14,13 +14,19 @@ const keys = require("./keys.js");
 const inquirer = require("inquirer");
 
 //spotify key
-const spotify = new Spotify(keys.spotify);
+const spotify = require('spotify');
+// new Spotify(keys.spotify);
+
+
+//moment
+const moment = require('moment');
+
 
 //omdb key
-
+var omdb = require('omdb');
 
 //bands in town key
-
+var bandsintown = require('bandsintown')(APP_ID);
 
 //create object
 const choice
@@ -37,7 +43,7 @@ switch(liriChoice) {
   case "movie-this":
    //liriChoice. //movie()
   break;
-  default;
+  default: 
 
   case "spotify-this-song":
     if(input) {
@@ -65,7 +71,14 @@ switch(liriChoice) {
 }
 
 function spotify() {
-  //spotify search check on webpage
+  spotify.search({ type: 'track', query: 'dancing in the moonlight' }, function(err, data) {
+    if ( err ) {
+        console.log('Error occurred: ' + err);
+        return;
+    }
+ 
+    // Do something with 'data'
+});
 
   //fs.appendFile
 };
