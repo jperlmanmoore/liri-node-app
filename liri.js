@@ -7,8 +7,6 @@ const axios = require("axios");
 //file system
 const fs = require("fs");
 
-//use to write text to file
-const text = process.argv[2];
 //keys.js -- 
 const keys = require("./keys.js");
 
@@ -25,7 +23,8 @@ const moment = require('moment');
 //bands
 // var bandsintown = require('bandsintown')(APP_ID);
 
-const switchCases = (choice) => {
+//optimally, I would wrap the inquirer.prompt in a function and not type it multiple times
+const switchCases = choice => {
   switch (choice) {
     case "movie-this":
       inquirer.prompt([
@@ -82,6 +81,11 @@ var askQuestion = () => {
   ]).then(answer => {
     // console.log(answer.choices);
     switchCases(answer.choices);
+    fs.appendFile("log.txt", answer.choices, function(err) {
+      if (err) {
+        console.log(err)
+      }
+    })
   });
 };
 
@@ -106,13 +110,13 @@ function spotifySearch(answer) {
 };
 
 //movie
-const movie = (answer) => {
+const movie = answer => {
   if (answer === "") {
     answer = `Mr. Nobody! If you haven't watched "Mr. Nobody," then you should: http://www.imdb.com/title/tto485947. It's on Netflix!`
   } else {
     axios.get("http://www.omdbapi.com/?t=" + answer + "&y=&plot=short&apikey=trilogy")
       .then(function (response) {
-        console.log(
+        var movies = 
           `\n------------------------------------------------------------------------------
         Movie title: ${response.data.Title}
         Movie Year: ${response.data.Year}
@@ -122,7 +126,15 @@ const movie = (answer) => {
         Language: ${response.data.Language}
         Plot: ${response.data.Plot}
         Actors ${response.data.Actors}
-        \n------------------------------------------------------------------------------`)
+        \n------------------------------------------------------------------------------
+        \n`; 
+        fs.appendFile("log.txt", movies, function (err) {
+          if (err) {
+            console.log(err);
+          } else {
+            console.log(movies)
+          }
+        });
       })
       .catch(function (error) {
         console.log(error);
@@ -130,7 +142,7 @@ const movie = (answer) => {
   };
 };
 
-const doWhat = (text) => {
+const doWhat = text => {
   fs.readFile("random.txt", "utf8", function (err, text) {
     if (err) { console.log("oops") }
     text = text.split(",");
@@ -149,12 +161,7 @@ const concertSearch = (answer) => {
     axios.get(`https://rest.bandsintown.com/artists/${answer}/events?app_id=codingbootcamp`)
       .then(function (response) {
         for (var i = 0; i < 5; i++) {
-          var concerts = `
-------------------------------------------------------------------------------
-Venue name: ${response.data[i].venue.name}
-Venue location: ${response.data[i].venue.city}
-Event date: ${moment(response.data[i].datetime).format("MM/DD/YYY")}
-------------------------------------------------------------------------------`
+          var concerts = '\n\n------------------------------------------------------------------------------\nVenue name: ' + response.data[i].venue.name + '\nVenue location: ' + response.data[i].venue.city + '\nEvent date: ' + moment(response.data[i].datetime).format("MM/DD/YYY") + '\n------------------------------------------------------------------------------\n'
         };
         fs.appendFile("log.txt", concerts, function (err) {
           if (err) {
