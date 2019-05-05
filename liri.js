@@ -66,11 +66,10 @@ const switchCases = (choice) => {
 
     case "do-what-it-says":
       doWhat();
-      break;
-
-    // default: console.log("default" + choice)
-
+  
+    break;
   };
+    // default: console.log("default" + choice)
 };
 
 
@@ -134,21 +133,22 @@ const movie = (answer) => {
   };
 };
 
-const doWhat = (fs) => {
-  fs.readFile("random.txt", "utf8", function (err, data) {
-    if (err) {
-      console.log("Ooop, can't do what it says!");
-    } else {
-      spotifySearch(data[1]);
-    }
+const doWhat = (text) => {
+  fs.readFile("random.txt", "utf8", function(err, text) {
+      if (err) {console.log("oops")} 
+      text = text.split(",");
+      // console.log(text);
+      spotifySearch(text[1]);
   });
+  return text;
 };
 
 const concertSearch = (answer, fs) => {
   if (answer === "") {
     console.log("Please, enter a name to search a band or artist")
   } else {
-
+    const queryURL = "https://rest.bandsintown.com/artists/" + answer + "/events?app_id=codingbootcamp"
+  
   }
 }
 
