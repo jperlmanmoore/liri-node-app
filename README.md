@@ -18,11 +18,8 @@ Javascript
 Node.js
 
 ## Uses
-
-"axios": "^0.18.0",
-"bandsintown": "^1.0.1",
-"dotenv": "^8.0.0",
-"inquirer": "^6.3.1",
-"moment": "^2.24.0",
-"node-spotify-api": "^1.1.1",
-"omdb": "^0.8.0"
+axios
+dotenv
+inquirer
+moment
+node-spotify-api
