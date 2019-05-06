@@ -157,6 +157,8 @@ const doWhat = text => {
     text = text.split(",");
     // console.log(text);
     spotifySearch(text[1]);
+    // concertSearch(text[3]); //I could not get this one to work correctly
+    movie(text[5]);
   });
   return text;
 };
@@ -170,7 +172,14 @@ const concertSearch = (answer) => {
     axios.get(`https://rest.bandsintown.com/artists/${answer}/events?app_id=codingbootcamp`)
       .then(function (response) {
         for (var i = 0; i < 5; i++) {
-          var concerts = '\n\n------------------------------------------------------------------------------\nVenue name: ' + response.data[i].venue.name + '\nVenue location: ' + response.data[i].venue.city + '\nEvent date: ' + moment(response.data[i].datetime).format("MM/DD/YYY") + '\n------------------------------------------------------------------------------\n'
+          var concerts = `
+
+------------------------------------------------------------------------------
+Venue name: ${response.data[i].venue.name}
+Venue location: ${response.data[i].venue.city}
+Event date: ${moment(response.data[i].datetime).format("MM/DD/YYY")}
+------------------------------------------------------------------------------
+`
         };
         fs.appendFile("log.txt", concerts, function (err) {
           if (err) {
