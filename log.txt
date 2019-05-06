@@ -248,3 +248,29 @@ do-what-it-says
   
 ----------------------------------------------------------------------------------------
   
+movie-this
+------------------------------------------------------------------------------
+        Movie title: Jaws
+        Movie Year: 1975
+        IMDB rating: 8.0
+        Rotten Tomato rating: [object Object]
+        Country: USA
+        Language: English
+        Plot: When a killer shark unleashes chaos on a beach community, it's up to a local sheriff, a marine biologist, and an old seafarer to hunt the beast down.
+        Actors Roy Scheider, Robert Shaw, Richard Dreyfuss, Lorraine Gary
+        
+------------------------------------------------------------------------------
+        
+movie-this
+------------------------------------------------------------------------------
+        Movie title: Jaws
+        Movie Year: 1975
+        IMDB rating: 8.0
+        Rotten Tomato rating: [object Object]
+        Country: USA
+        Language: English
+        Plot: When a killer shark unleashes chaos on a beach community, it's up to a local sheriff, a marine biologist, and an old seafarer to hunt the beast down.
+        Actors Roy Scheider, Robert Shaw, Richard Dreyfuss, Lorraine Gary
+        
+------------------------------------------------------------------------------
+        
