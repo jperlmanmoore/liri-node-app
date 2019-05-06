@@ -19,10 +19,3 @@ The app makes use of node modules including, inquirer, moments, and axios. The i
 Javascript
 Node.js
 
-## Uses
-
-axios
-dotenv
-inquirer
-moment
-node-spotify-api
