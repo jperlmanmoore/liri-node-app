@@ -81,7 +81,7 @@ var askQuestion = () => {
   ]).then(answer => {
     // console.log(answer.choices);
     switchCases(answer.choices);
-    fs.appendFile("log.txt", answer.choices, function(err) {
+    fs.appendFile("log.txt", answer.choices, function (err) {
       if (err) {
         console.log(err)
       }
@@ -90,24 +90,33 @@ var askQuestion = () => {
 };
 
 //spotify
-function spotifySearch(answer) {
+const spotifySearch = answer => {
   if (answer === "") {
     answer = "I Want it That Way";
   }
   spotify.search({ type: "track", query: answer }, function (err, data) {
     if (err) {
       return console.log("error occured: " + err);
-    }
-    console.log(
-      `\n ---------------------------------------
+    };
+    var spotifyResults =
+      `\n ------------------------------------------------------------------------------------
   Song: ${data.tracks.items[0].name}, 
   Artist: ${data.tracks.items[0].artists[0].name},
   Album name: ${data.tracks.items[0].album.name}, 
   Preview: ${data.tracks.items[0].external_urls.spotify}
-  \n---------------------------------------`);
-  })
-  // console.log()
+  \n----------------------------------------------------------------------------------------
+  \n`;
+  fs.appendFile('log.txt', spotifyResults, function (err) {
+    if (err) {
+      console.log(err);
+    } else {
+      console.log(spotifyResults)
+    }
+  })  
+});
+  
 };
+
 
 //movie
 const movie = answer => {
@@ -116,7 +125,7 @@ const movie = answer => {
   } else {
     axios.get("http://www.omdbapi.com/?t=" + answer + "&y=&plot=short&apikey=trilogy")
       .then(function (response) {
-        var movies = 
+        var movies =
           `\n------------------------------------------------------------------------------
         Movie title: ${response.data.Title}
         Movie Year: ${response.data.Year}
@@ -127,7 +136,7 @@ const movie = answer => {
         Plot: ${response.data.Plot}
         Actors ${response.data.Actors}
         \n------------------------------------------------------------------------------
-        \n`; 
+        \n`;
         fs.appendFile("log.txt", movies, function (err) {
           if (err) {
             console.log(err);
