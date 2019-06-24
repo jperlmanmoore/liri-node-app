@@ -130,7 +130,7 @@ const movie = answer => {
         Movie title: ${response.data.Title}
         Movie Year: ${response.data.Year}
         IMDB rating: ${response.data.imdbRating}
-        Rotten Tomato rating: ${response.data.Ratings[1]}
+        Rotten Tomato rating: ${response.data.Ratings[1].Value}
         Country: ${response.data.Country}
         Language: ${response.data.Language}
         Plot: ${response.data.Plot}
@@ -191,6 +191,7 @@ Event date: ${moment(response.data[i].datetime).format("MM/DD/YYY")}
       })
   };
 };
+
 
 askQuestion();
 switchCases();
