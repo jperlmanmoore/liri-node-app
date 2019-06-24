@@ -137,7 +137,7 @@ const movie = answer => {
         Actors ${response.data.Actors}
         \n------------------------------------------------------------------------------
         \n`;
-        fs.appendFile("log.txt", movies, function (err) {
+        fs.appendFile("log.txt", movies, err => {
           if (err) {
             console.log(err);
           } else {
@@ -145,14 +145,14 @@ const movie = answer => {
           }
         });
       })
-      .catch(function (error) {
+      .catch(error => {
         console.log(error);
       });
   };
 };
 
 const doWhat = text => {
-  fs.readFile("random.txt", "utf8", function (err, text) {
+  fs.readFile("random.txt", "utf8", (err, text) => {
     if (err) { console.log("oops") }
     text = text.split(",");
     // console.log(text);
@@ -170,7 +170,7 @@ const concertSearch = (answer) => {
     // const queryURL = `https://rest.bandsintown.com/artists/${answer}/events?app_id=codingbootcamp`
     // console.log(queryURL);
     axios.get(`https://rest.bandsintown.com/artists/${answer}/events?app_id=codingbootcamp`)
-      .then(function (response) {
+      .then(response => {
         for (var i = 0; i < 5; i++) {
           var concerts = `
 
@@ -181,7 +181,7 @@ Event date: ${moment(response.data[i].datetime).format("MM/DD/YYY")}
 ------------------------------------------------------------------------------
 `
         };
-        fs.appendFile("log.txt", concerts, function (err) {
+        fs.appendFile("log.txt", concerts, err => {
           if (err) {
             console.log(err);
           } else {
