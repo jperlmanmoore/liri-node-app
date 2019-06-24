@@ -541,3 +541,169 @@ movie-this
         
 ------------------------------------------------------------------------------
         
+movie-this
+------------------------------------------------------------------------------
+        Movie title: Jaws
+        Movie Year: 1975
+        IMDB rating: 8.0
+        Rotten Tomato rating: 97%
+        Country: USA
+        Language: English
+        Plot: When a killer shark unleashes chaos on a beach community, it's up to a local sheriff, a marine biologist, and an old seafarer to hunt the beast down.
+        Actors Roy Scheider, Robert Shaw, Richard Dreyfuss, Lorraine Gary
+        
+------------------------------------------------------------------------------
+        
+movie-this
+------------------------------------------------------------------------------
+        Movie title: Jaws
+        Movie Year: 1975
+        IMDB rating: 8.0
+        Rotten Tomato rating: 97%
+        Country: USA
+        Language: English
+        Plot: When a killer shark unleashes chaos on a beach community, it's up to a local sheriff, a marine biologist, and an old seafarer to hunt the beast down.
+        Actors Roy Scheider, Robert Shaw, Richard Dreyfuss, Lorraine Gary
+        
+------------------------------------------------------------------------------
+        
+spotify-this-song
+ ------------------------------------------------------------------------------------
+  Song: Hey Jude - Remastered 2015, 
+  Artist: The Beatles,
+  Album name: 1 (Remastered), 
+  Preview: https://open.spotify.com/track/0aym2LBJBk9DAYuHHutrIl
+  
+----------------------------------------------------------------------------------------
+  
+concert-this
+
+------------------------------------------------------------------------------
+Venue name: La Defense Arena
+Venue location: Paris
+Event date: 07/03/192019
+------------------------------------------------------------------------------
+do-what-it-says
+------------------------------------------------------------------------------
+        Movie title: Jaws
+        Movie Year: 1975
+        IMDB rating: 8.0
+        Rotten Tomato rating: 97%
+        Country: USA
+        Language: English
+        Plot: When a killer shark unleashes chaos on a beach community, it's up to a local sheriff, a marine biologist, and an old seafarer to hunt the beast down.
+        Actors Roy Scheider, Robert Shaw, Richard Dreyfuss, Lorraine Gary
+        
+------------------------------------------------------------------------------
+        
+
+ ------------------------------------------------------------------------------------
+  Song: I Want It That Way, 
+  Artist: Backstreet Boys,
+  Album name: The Hits--Chapter One, 
+  Preview: https://open.spotify.com/track/6e40mgJiCid5HRAGrbpGA6
+  
+----------------------------------------------------------------------------------------
+  
+movie-this
+------------------------------------------------------------------------------
+        Movie title: Jaws
+        Movie Year: 1975
+        IMDB rating: 8.0
+        Rotten Tomato rating: 97%
+        Country: USA
+        Language: English
+        Plot: When a killer shark unleashes chaos on a beach community, it's up to a local sheriff, a marine biologist, and an old seafarer to hunt the beast down.
+        Actors Roy Scheider, Robert Shaw, Richard Dreyfuss, Lorraine Gary
+        
+------------------------------------------------------------------------------
+        
+spotify-this-song
+ ------------------------------------------------------------------------------------
+  Song: Hey Jude - Remastered 2015, 
+  Artist: The Beatles,
+  Album name: 1 (Remastered), 
+  Preview: https://open.spotify.com/track/0aym2LBJBk9DAYuHHutrIl
+  
+----------------------------------------------------------------------------------------
+  
+concert-this
+
+------------------------------------------------------------------------------
+Venue name: La Defense Arena
+Venue location: Paris
+Event date: 07/03/192019
+------------------------------------------------------------------------------
+do-what-it-says
+------------------------------------------------------------------------------
+        Movie title: Jaws
+        Movie Year: 1975
+        IMDB rating: 8.0
+        Rotten Tomato rating: 97%
+        Country: USA
+        Language: English
+        Plot: When a killer shark unleashes chaos on a beach community, it's up to a local sheriff, a marine biologist, and an old seafarer to hunt the beast down.
+        Actors Roy Scheider, Robert Shaw, Richard Dreyfuss, Lorraine Gary
+        
+------------------------------------------------------------------------------
+        
+
+ ------------------------------------------------------------------------------------
+  Song: I Want It That Way, 
+  Artist: Backstreet Boys,
+  Album name: The Hits--Chapter One, 
+  Preview: https://open.spotify.com/track/6e40mgJiCid5HRAGrbpGA6
+  
+----------------------------------------------------------------------------------------
+  
+movie-this
+------------------------------------------------------------------------------
+        Movie title: Jaws
+        Movie Year: 1975
+        IMDB rating: 8.0
+        Rotten Tomato rating: 97%
+        Country: USA
+        Language: English
+        Plot: When a killer shark unleashes chaos on a beach community, it's up to a local sheriff, a marine biologist, and an old seafarer to hunt the beast down.
+        Actors Roy Scheider, Robert Shaw, Richard Dreyfuss, Lorraine Gary
+        
+------------------------------------------------------------------------------
+        
+spotify-this-song
+ ------------------------------------------------------------------------------------
+  Song: Hey Jude - Remastered 2015, 
+  Artist: The Beatles,
+  Album name: 1 (Remastered), 
+  Preview: https://open.spotify.com/track/0aym2LBJBk9DAYuHHutrIl
+  
+----------------------------------------------------------------------------------------
+  
+concert-this
+
+------------------------------------------------------------------------------
+Venue name: La Defense Arena
+Venue location: Paris
+Event date: 07/03/192019
+------------------------------------------------------------------------------
+do-what-it-says
+------------------------------------------------------------------------------
+        Movie title: Jaws
+        Movie Year: 1975
+        IMDB rating: 8.0
+        Rotten Tomato rating: 97%
+        Country: USA
+        Language: English
+        Plot: When a killer shark unleashes chaos on a beach community, it's up to a local sheriff, a marine biologist, and an old seafarer to hunt the beast down.
+        Actors Roy Scheider, Robert Shaw, Richard Dreyfuss, Lorraine Gary
+        
+------------------------------------------------------------------------------
+        
+
+ ------------------------------------------------------------------------------------
+  Song: I Want It That Way, 
+  Artist: Backstreet Boys,
+  Album name: The Hits--Chapter One, 
+  Preview: https://open.spotify.com/track/6e40mgJiCid5HRAGrbpGA6
+  
+----------------------------------------------------------------------------------------
+  
